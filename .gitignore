@@ -4,6 +4,10 @@
 *.tfstate.backup
 .crash.log
 terraform.tfstate.d/
+*.tfstate
+*.tfstate.*
+.terraform/
+
 
 # Python
 __pycache__/

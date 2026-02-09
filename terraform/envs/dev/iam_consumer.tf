@@ -42,7 +42,7 @@ resource "aws_iam_policy" "consumer_policy" {
         Resource = "*"
       },
 
-      # S3 write (THIS FIXES YOUR ERROR)
+      # S3 write 
       {
         Effect = "Allow"
         Action = [

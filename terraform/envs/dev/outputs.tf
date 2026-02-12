@@ -13,3 +13,7 @@ output "producer_role_arn" {
 output "consumer_role_arn" {
   value = aws_iam_role.consumer.arn
 }
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.weather_data.bucket
+}

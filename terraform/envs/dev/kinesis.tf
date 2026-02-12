@@ -7,11 +7,10 @@ resource "aws_kinesis_stream" "weather" {
     "IncomingBytes",
     "IncomingRecords",
     "OutgoingBytes",
-    "OutgoingRecords",
   ]
 
   tags = {
-    Project = var.project
-    Service = "weather-streaming"
+    Project     = var.project
+    Environment = var.environment
   }
 }

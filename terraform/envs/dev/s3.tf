@@ -1,12 +1,17 @@
 resource "aws_s3_bucket" "weather_data" {
-  bucket        = "weather-streaming-data-dev"
-  force_destroy = true
-}
+  bucket = "${var.project}-data-${var.environment}"
 
-resource "aws_s3_bucket_ownership_controls" "weather_data" {
-  bucket = aws_s3_bucket.weather_data.id
-
-  rule {
-    object_ownership = "BucketOwnerPreferred"
+  tags = {
+    Project     = var.project
+    Environment = var.environment
   }
 }
+
+resource "aws_s3_bucket_versioning" "weather_data" {
+  bucket = aws_s3_bucket.weather_data.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
